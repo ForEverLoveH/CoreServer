@@ -19,21 +19,24 @@ namespace CoreServer.GameNet
     /// <summary>
     /// 网络服务
     /// </summary>
-    public  class NetService  
+    public class NetService
     {
         //TcpSocketListener listener;
         private TcpService tcpService;
-        public NetService(string ip ,int port ,int block=100) 
+
+        public NetService(string ip, int port, int block = 100)
         {
-            tcpService = new TcpService( ip, port,block );
+            tcpService = new TcpService(ip, port, block);
             tcpService.NewConnection += NewClientContion;
             tcpService.DisConnection += ClientDisContion;
-           // tcpService.DataRecevied += DataRecieveData;
+            // tcpService.DataRecevied += DataRecieveData;
         }
+
         /// <summary>
         /// 记录链接对象的最后一次心跳时间
         /// </summary>
-        private Dictionary<Connection,DateTime> HeartBeatPairs = new Dictionary<Connection,DateTime>();
+        private Dictionary<Connection, DateTime> HeartBeatPairs = new Dictionary<Connection, DateTime>();
+
         /*/// <summary>
         /// 接收到消息
         /// </summary>
@@ -44,24 +47,24 @@ namespace CoreServer.GameNet
            // Package package = ProtobufHelper. DeserializeProtoData<Package>(data);
             MessageRouter.Instance.AddMessageDataToQueue(connection, data);
         }*/
+
         /// <summary>
         /// 客户端断开
         /// </summary>
         /// <param name="connection"></param>
         private void ClientDisContion(Connection connection)
         {
-
-            Log.Information("连接断开"+connection);
-            var sapce=connection.Get<SpaceData>();
-            if(sapce!=null )
+            Log.Information("连接断开" + connection);
+            var sapce = connection.Get<SpaceData>();
+            if (sapce != null)
             {
-                var character= connection.Get<CharacterData>();
+                var character = connection.Get<CharacterData>();
                 sapce.CharacterLeave(connection, character);
             }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="connection"></param>
         private void NewClientContion(Connection conn)
@@ -72,7 +75,7 @@ namespace CoreServer.GameNet
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void StartService()
         {
@@ -81,18 +84,19 @@ namespace CoreServer.GameNet
             MessageRouter.Instance.OnMessage<HeartBeatRequest>(_HeartBeatRequest);
             Timer timer = new Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="state"></param>
-        private void   TimerCallback(object state)
+        private void TimerCallback(object state)
         {
-            Log.Information("执行心跳检查");
-            var  now = DateTime.Now;
-            foreach(var pair in HeartBeatPairs)
+            // Log.Information("执行心跳检查");
+            var now = DateTime.Now;
+            foreach (var pair in HeartBeatPairs)
             {
-                var cha= now- pair.Value;
-                if (cha.TotalMilliseconds > 20)
+                var cha = now - pair.Value;
+                if (cha.TotalMilliseconds > 3000)
                 {
                     //关闭超时链接
                     pair.Key.CloseNetConntion();
@@ -100,6 +104,7 @@ namespace CoreServer.GameNet
                 }
             }
         }
+
         /// <summary>
         /// 监听心跳包
         /// </summary>
@@ -109,7 +114,7 @@ namespace CoreServer.GameNet
         {
             Log.Information("收到心跳包" + conn);
             HeartBeatPairs[conn] = DateTime.Now;
-           // Thread.Sleep(300);
+            // Thread.Sleep(300);
             HeartBeatResponse message = new HeartBeatResponse();
             conn.SendDataToClient(message);
         }

@@ -11,29 +11,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreServer.GameService.UserService
+namespace CoreServer.GameService
 {
     /// <summary>
-    /// 玩家服务类 
+    /// 玩家服务类
     /// 注册 登录 创建角色 进入游戏等
     /// </summary>
-    public  class UserService:Singleton<UserService>
+    public class UserService : Singleton<UserService>
     {
         public void Start()
         {
             MessageRouter.Instance.OnMessage<GameEnterRequest>(_GameEnterRequest);
             MessageRouter.Instance.OnMessage<UserLoginRequest>(_UserLoginGame);
             MessageRouter.Instance.OnMessage<UserRoleListRequest>(_UserRoleList);
-            
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="netConnection"></param>
         /// <param name="messageData"></param>
         private void _UserRoleList(Connection netConnection, UserRoleListRequest messageData)
         {
-             LoginService.Instance.GetUserRoleList(netConnection, messageData);
+            LoginService.Instance.GetUserRoleList(netConnection, messageData);
         }
 
         /// <summary>
@@ -43,12 +43,11 @@ namespace CoreServer.GameService.UserService
         /// <param name="messageData"></param>
         private void _UserLoginGame(Connection netConnection, UserLoginRequest messageData)
         {
-            LoginService.Instance.StartLoginService(netConnection, messageData);    
+            LoginService.Instance.StartLoginService(netConnection, messageData);
         }
 
-        
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="netConnection"></param>
         /// <param name="messageData"></param>
@@ -59,13 +58,13 @@ namespace CoreServer.GameService.UserService
 
             int entityID = EntityManager.Instance.NewEntityId;
             Log.Information("有玩家进入游戏！！");
-           // Vector3Int pos = new Vector3Int(500,0,500);
+            // Vector3Int pos = new Vector3Int(500,0,500);
             Random random = new Random();
             Vector3Int pos = new Vector3Int(31 + random.Next(-1, 1), 22 + random.Next(-1, 1), 54 + random.Next((int)-1, 1));
             pos *= 1000;
-            
+
             //分配角色
-             CharacterData characterData = new CharacterData(entityID,pos,Vector3Int.zero);
+            CharacterData characterData = new CharacterData(entityID, pos, Vector3Int.zero);
             ///通知登录成功
             GameEnterResponse response = new GameEnterResponse()
             {
@@ -73,10 +72,8 @@ namespace CoreServer.GameService.UserService
                 Success = true,
             };
             netConnection.SendDataToClient(response);
-            var space = GameMapService.Instance.GetSpace(6);//新手村6 
+            var space = GameMapService.Instance.GetSpace(6);//新手村6
             space.CharacterJoin(netConnection, characterData);
-
-        
         }
     }
 }

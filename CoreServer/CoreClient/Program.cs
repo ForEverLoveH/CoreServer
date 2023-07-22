@@ -11,7 +11,6 @@ using CoreCommon.Proto;
 
 Console.WriteLine("Hello, World!");
 
-
 Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Console().WriteTo.File("logs\\Client-log.txt", rollingInterval: RollingInterval.Day).CreateLogger();
 string host = "127.0.0.1";
 int port = 9666;
@@ -21,20 +20,9 @@ socket.Connect(iPEndPoint);
 Log.Debug("服务器连接成功！！");
 Thread.Sleep(1000);
 Connection connection = new Connection(socket);
- 
+
 var msg = new UserLoginRequest();
 msg.Username = "123";
 msg.Password = "123";
 connection.SendDataToClient(msg);
-/*var pack = ProtobufHelper.Pack(msg);
-var unpack = ProtobufHelper.UnPack(pack);
-Log.Information("{0}:{1}", unpack.GetType(), unpack);
-ProtobufHelper.Pack(msg);*/
- 
-/*MemoryStream memory = new MemoryStream();
-CodedOutputStream codedOutputStream = new CodedOutputStream(memory);
-package.WriteTo(codedOutputStream);
-codedOutputStream.Flush();
-HandelSocket.Instance.SendMessageToServer(socket, memory.ToArray());*/
 Console.ReadKey();
-
