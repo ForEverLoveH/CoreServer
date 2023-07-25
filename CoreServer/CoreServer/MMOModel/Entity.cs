@@ -33,7 +33,7 @@ namespace CoreServer.MMOModel
 
         public   Vector3Int     Position
         {
-            get { return position; } 
+            get { return position; }
             set { position = value; }
         }
         public Vector3Int Rotation
@@ -41,12 +41,10 @@ namespace CoreServer.MMOModel
             get { return rotation; }
             set { rotation = value; }
         }*/
-        
 
-        
-        public NEnity GetEntityData()
+        public NEntity GetEntityData()
         {
-            var data = new NEnity();
+            var data = new NEntity();
             data.Id = this.EntityID;
             data.Position = new NVector3()
             {
@@ -64,23 +62,28 @@ namespace CoreServer.MMOModel
         }
 
         private int spaceId;
+
         public int SpceID
         {
-            get { return this.spaceId; } set
+            get { return this.spaceId; }
+            set
             {
                 this.spaceId = value;
             }
         }
+
         private int id { get; set; }
+
         /// <summary>
         /// 唯一编号
         /// </summary>
         public int EntityID
         {
-            get { return id; }     
+            get { return id; }
         }
 
         private string name { get; set; }
+
         /// <summary>
         /// 名字
         /// </summary>
@@ -89,7 +92,9 @@ namespace CoreServer.MMOModel
             get { return name; }
             set { name = value; }
         }
+
         private int level { get; set; }
+
         /// <summary>
         /// 等级
         /// </summary>
@@ -98,7 +103,9 @@ namespace CoreServer.MMOModel
             get { return level; }
             set { level = value; }
         }
+
         private int hp { get; set; }
+
         /// <summary>
         /// 血量
         /// </summary>
@@ -110,7 +117,9 @@ namespace CoreServer.MMOModel
             }
             set { hp = value; }
         }
+
         private int mp { get; set; }
+
         /// <summary>
         /// 魔量
         /// </summary>
@@ -121,42 +130,48 @@ namespace CoreServer.MMOModel
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private Vector3Int position;
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Vector3Int Position
         {
             get { return position; }
             set { position = value; }
         }
+
         private Vector3Int rotation;
+
         public Vector3Int Rotation
         {
             get { return rotation; }
             set { rotation = value; }
         }
+
         public Entity(int entityID, Vector3Int pos, Vector3Int rotation)
         {
             this.id = entityID;
             this.position = pos;
             this.Rotation = rotation;
         }
-        public Entity(int entityID,string name,int level,int hp,int mp, Vector3Int pos,Vector3Int  rotation) 
-        { 
+
+        public Entity(int entityID, string name, int level, int hp, int mp, Vector3Int pos, Vector3Int rotation)
+        {
             this.id = entityID;
             this.name = name;
             this.level = level;
             this.hp = hp;
             this.mp = mp;
             this.position = new Vector3Int(pos.x, pos.y, pos.z);
-            this.rotation = new Vector3Int(rotation.x,rotation.y, rotation.z);
+            this.rotation = new Vector3Int(rotation.x, rotation.y, rotation.z);
         }
-        public NEnity GetData() 
+
+        public NEntity GetData()
         {
-            var data = new NEnity();   
+            var data = new NEntity();
             data.Id = this.id;
             data.Position = new NVector3
             {
@@ -172,14 +187,15 @@ namespace CoreServer.MMOModel
             };
             return data;
         }
-        public void SetEntityData(NEnity enity)
+
+        public void SetEntityData(NEntity enity)
         {
             position.x = enity.Position.X;
             position.y = enity.Position.Y;
             position.z = enity.Position.Z;
-            rotation.x= enity.Direction.X;
-            rotation.y= enity.Direction.Y;
-            rotation.z= enity.Direction.Z;
+            rotation.x = enity.Direction.X;
+            rotation.y = enity.Direction.Y;
+            rotation.z = enity.Direction.Z;
         }
     }
 }

@@ -22,7 +22,7 @@ Thread.Sleep(1000);
 Connection connection = new Connection(socket);
 
 var msg = new UserLoginRequest();
-msg.Username = "123";
-msg.Password = "123";
+msg.Username = "13294062492";
+msg.Password = "123456";
 connection.SendDataToClient(msg);
 Console.ReadKey();

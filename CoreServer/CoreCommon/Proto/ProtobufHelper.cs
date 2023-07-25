@@ -115,20 +115,20 @@ namespace CoreCommon.Proto
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        public static Package Pack(IMessage message)
+       /* public static Package Pack(IMessage message)
         {
             Package package = new Package();
             package.FullName = message.Descriptor.FullName;
             package.Data = message.ToByteString();
             return package;
-        }
+        }*/
 
         /// <summary>
         /// 解包
         /// </summary>
         /// <param name="package"></param>
         /// <returns></returns>
-        public static IMessage UnPack(Package package)
+      /*  public static IMessage UnPack(Package package)
         {
             string fullName = package.FullName;
             if (GetAllTypes.ContainsKey(fullName))
@@ -138,7 +138,7 @@ namespace CoreCommon.Proto
                 return desc.Parser.ParseFrom(package.Data);
             }
             return null;
-        }
+        }*/
 
         /// <summary>
         /// 根据消息编码进行解析
