@@ -14,7 +14,6 @@ using System.Net.Sockets;
 
 Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Async(a => a.Console()).WriteTo.Async(a => a.File("logs\\Server-log.txt", rollingInterval: RollingInterval.Day)).CreateLogger();
 ServiceManager.Instance.StartService();
-Log.Information("位置同步服务启动完成");
 
 //测试消息订阅 用户登录
 //MessageRouter.Instance.OnMessage<UserLoginRequest>(LoginService.Instance.OnUserLoginRequest);

@@ -67,8 +67,11 @@ namespace CoreCommon.NetCommon
         /// <param name="e"></param>
         private void HandleClientDataRecieved(object? sender, byte[] buffer)
         {
+            ///控制台发送登录请求 得到的buffer 长 23
+            /// unity 中得到的长度是23
+            /// 但是在 unity中得到的code 是7 控制台是6？？？？
             var code = GetUshort(buffer, 0);
-            var msg = ProtobufHelper.ParseFromData(code, buffer, 2, buffer.Length - 2);
+            var msg = ProtoHelper.ParseFrom(code, buffer, 2, buffer.Length - 2);
             if (MessageRouter.Instance.Running)
             {
                 MessageRouter.Instance.AddMessageDataToQueue(this, msg);
@@ -167,7 +170,7 @@ namespace CoreCommon.NetCommon
                     SendDataToClient(data, 0, data.Length);*/
             using (var ds = DataStream.DataStream.Allocate())
             {
-                int code = ProtobufHelper.SeqCode(message.GetType());
+                int code = ProtoHelper.SeqCode(message.GetType());
                 ds.WriteInt(message.CalculateSize() + 2);
                 ds.WriteUShort((ushort)code);
                 message.WriteTo(ds);
@@ -218,6 +221,5 @@ namespace CoreCommon.NetCommon
         }
 
         #endregion 发送网络数据包
-
     }
 }

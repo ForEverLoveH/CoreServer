@@ -72,14 +72,14 @@ namespace CoreServer.MMOModel
             }
         }
 
-        private int id { get; set; }
+        private int entityid { get; set; }
 
         /// <summary>
         /// 唯一编号
         /// </summary>
         public int EntityID
         {
-            get { return id; }
+            get { return entityid; }
         }
 
         private string name { get; set; }
@@ -98,7 +98,7 @@ namespace CoreServer.MMOModel
         /// <summary>
         /// 等级
         /// </summary>
-        public int EntityLevel
+        public int Level
         {
             get { return level; }
             set { level = value; }
@@ -153,14 +153,14 @@ namespace CoreServer.MMOModel
 
         public Entity(int entityID, Vector3Int pos, Vector3Int rotation)
         {
-            this.id = entityID;
+            this.entityid = entityID;
             this.position = pos;
             this.Rotation = rotation;
         }
 
         public Entity(int entityID, string name, int level, int hp, int mp, Vector3Int pos, Vector3Int rotation)
         {
-            this.id = entityID;
+            this.entityid = entityID;
             this.name = name;
             this.level = level;
             this.hp = hp;
@@ -172,7 +172,7 @@ namespace CoreServer.MMOModel
         public NEntity GetData()
         {
             var data = new NEntity();
-            data.Id = this.id;
+            data.Id = this.entityid;
             data.Position = new NVector3
             {
                 X = this.position.x,
