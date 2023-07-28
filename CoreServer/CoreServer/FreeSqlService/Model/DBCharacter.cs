@@ -54,21 +54,6 @@ namespace CoreServer.FreeSqlService
         /// <summary>
         ///
         /// </summary>
-        public int XPos { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int YPos { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int ZPos { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public long Gold { get; set; }
 
         /// <summary>

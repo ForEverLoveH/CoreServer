@@ -48,15 +48,15 @@ namespace CoreServer.MMOModel
             data.Id = this.EntityID;
             data.Position = new NVector3()
             {
-                X = position.x,
-                Y = position.y,
-                Z = position.z
+                X = Position.x,
+                Y = Position.y,
+                Z = Position.z
             };
             data.Direction = new NVector3
             {
-                X = 0,
-                Y = 0,
-                Z = 0
+                X = Rotation.x,
+                Y = Rotation.y,
+                Z = Rotation.z,
             };
             return data;
         }
@@ -154,19 +154,8 @@ namespace CoreServer.MMOModel
         public Entity(int entityID, Vector3Int pos, Vector3Int rotation)
         {
             this.entityid = entityID;
-            this.position = pos;
-            this.Rotation = rotation;
-        }
-
-        public Entity(int entityID, string name, int level, int hp, int mp, Vector3Int pos, Vector3Int rotation)
-        {
-            this.entityid = entityID;
-            this.name = name;
-            this.level = level;
-            this.hp = hp;
-            this.mp = mp;
             this.position = new Vector3Int(pos.x, pos.y, pos.z);
-            this.rotation = new Vector3Int(rotation.x, rotation.y, rotation.z);
+            this.Rotation = new Vector3Int(rotation.x, rotation.y, rotation.z);
         }
 
         public NEntity GetData()

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
-namespace CoreServer.FreeSqlService.Model
+namespace CoreServer.FreeSqlService
 {
     [Table(Name = "Player")]
     public class DBPlayer

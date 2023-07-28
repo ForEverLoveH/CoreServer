@@ -2,9 +2,7 @@
 using CoreCommon.GameLog;
 using CoreCommon.MessageData;
 using CoreCommon.NetCommon;
-
 using CoreServer.FreeSqlService;
-using CoreServer.FreeSqlService.Model;
 using CoreServer.MMOModel;
 using CoreServer.MySqlService;
 using Org.BouncyCastle.Security;

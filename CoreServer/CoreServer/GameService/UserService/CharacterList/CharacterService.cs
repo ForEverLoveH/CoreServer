@@ -2,7 +2,7 @@
 using CoreCommon.MessageData;
 using CoreCommon.NetCommon;
 using CoreServer.FreeSqlService;
-using CoreServer.FreeSqlService.Model;
+
 using Serilog;
 
 namespace CoreServer.GameService

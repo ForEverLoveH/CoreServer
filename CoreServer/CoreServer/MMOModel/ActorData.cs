@@ -14,10 +14,6 @@ namespace CoreServer.MMOModel
         {
         }
 
-        public ActorData(int entityID, string name, int level, int hp, int mp, Vector3Int pos, Vector3Int rotation) : base(entityID, name, level, hp, mp, pos, rotation)
-        {
-        }
-
         public int id { get; set; }
         public NCharacter characterInfo { get; set; } = new NCharacter();
     }

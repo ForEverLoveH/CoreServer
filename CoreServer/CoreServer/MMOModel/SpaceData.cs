@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CoreCommon.NetCommon;
+using CoreServer.FreeSqlService;
 using Serilog;
 
 namespace CoreServer.MMOModel
@@ -14,6 +15,8 @@ namespace CoreServer.MMOModel
     /// </summary>
     public class SpaceData
     {
+        private IFreeSql freeSql = FreeSqlHelper.mysql;
+
         /// <summary>
         /// 标识
         /// </summary>
@@ -53,8 +56,7 @@ namespace CoreServer.MMOModel
         {
             Log.Information("角色进入场景:" + character.EntityID);
             character.connection = connection;
-            connection.Set<CharacterData>(character);//将角色存到连接中
-            connection.Set<SpaceData>(this);//场景存到连接
+
             character.SpceID = this.ID;
             CharacterDataDic[character.EntityID] = character;
             if (!CharacterConnection.ContainsKey(connection))
@@ -84,25 +86,70 @@ namespace CoreServer.MMOModel
         }
 
         /// <summary>
-        /// 广播 更新entity 的信息
+        ///  更新entity 的信息
         /// </summary>
         /// <param name="enitySync"></param>
-        public void UpdataEntity(NEntitySync enitySync)
+        public void UpdataEntity(NEntitySync enitySync, SpaceData space, CharacterData player, Connection netConnection)
         {
+            EntitySyncResponse response = new EntitySyncResponse();
             Log.Information("更新{0}", enitySync);
-            foreach (var kv in CharacterDataDic)
+            Log.Information(CharacterDataDic.Count.ToString());
+            if (CharacterDataDic.Count > 0)
             {
-                //表示自己
-                if (kv.Value.EntityID == enitySync.Entity.Id)
+                foreach (var kv in CharacterDataDic)
                 {
-                    kv.Value.SetEntityData(enitySync.Entity);
+                    //表示自己
+                    if (kv.Value.EntityID == enitySync.Entity.Id)
+                    {
+                        kv.Value.SetEntityData(enitySync.Entity);
+                        int playerID = player.player_ID;
+                        int jobID = player.characterInfo.TypeId;
+                        int spaceID = space.ID;
+                        DBCharacterMap map = freeSql.Select<DBCharacterMap>().Where(a => a.SpaceId == spaceID && a.JobID == jobID).ToOne();
+                        if (map != null)
+                        {
+                            var res = freeSql.Update<DBCharacterMap>().Set(a => a.XPos == enitySync.Entity.Position.X && a.Ypos == enitySync.Entity.Position.Y && a.Zpos == enitySync.Entity.Position.Z &&
+                            a.XRoutation == enitySync.Entity.Direction.X && a.YRoutation == enitySync.Entity.Direction.Y && a.ZRoutation == enitySync.Entity.Direction.Z).Where(a => a.Id == map.Id).ExecuteAffrows();
+                            if (res > 0)
+                            {
+                                map = freeSql.Select<DBCharacterMap>().Where(a => a.SpaceId == spaceID && a.JobID == jobID).ToOne();
+                                NVector3 pos = new NVector3()
+                                {
+                                    X = map.XPos,
+                                    Y = map.Ypos,
+                                    Z = map.Zpos
+                                };
+                                NVector3 dir = new NVector3()
+                                {
+                                    X = map.XRoutation,
+                                    Y = map.YRoutation,
+                                    Z = map.ZRoutation
+                                };
+                                NEntity nEntity = new NEntity()
+                                {
+                                    Id = enitySync.Entity.Id,
+                                    Position = pos,
+                                    Direction = dir,
+                                };
+                                response.EntityList.Add(nEntity);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        response.EntityList.Add(new NEntity()
+                        {
+                            Direction = enitySync.Entity.Direction,
+                            Position = enitySync.Entity.Position,
+                            Id = enitySync.Entity.Id,
+                        });
+                    }
+                    netConnection.SendDataToClient(response);
                 }
-                else
-                {
-                    EntitySyncResponse response = new EntitySyncResponse();
-                    /*response.EntityList = enitySync;
-                    kv.Value.connection.SendDataToClient(response);*/
-                }
+            }
+            else
+            {
+                return;
             }
         }
 

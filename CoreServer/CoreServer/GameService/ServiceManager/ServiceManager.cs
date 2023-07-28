@@ -15,6 +15,16 @@ namespace CoreServer.GameService
             StartNetService();
             StartUserService();
             StartGameMapService();
+            StartEntityService();
+        }
+
+        /// <summary>
+        /// 开启位置同步服务
+        /// </summary>
+        private void StartEntityService()
+        {
+            EntityService entity = new EntityService();
+            entity.StartService();
         }
 
         /// <summary>

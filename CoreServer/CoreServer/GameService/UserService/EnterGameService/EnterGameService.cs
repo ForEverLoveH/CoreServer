@@ -2,7 +2,7 @@
 using CoreCommon.MessageData;
 using CoreCommon.NetCommon;
 using CoreServer.FreeSqlService;
-using CoreServer.FreeSqlService.Model;
+
 using CoreServer.Manager;
 using CoreServer.MMOModel;
 using Serilog;
@@ -36,15 +36,50 @@ namespace CoreServer.GameService
             Log.Information("有玩家进入游戏！！" + messageData.CharacterId);
             var play = netConnection.Get<DBPlayer>();
             var roles = freeSql.Select<DBCharacter>().Where(a => a.PlayerID == play.Id && a.Id == messageData.CharacterId).First();
-            CharacterData chara = roles;
+            DBCharacterMap map = GameMapService.Instance.SettingCurrentChooseMapData(roles, msgID);
+            CharacterData chara = null;
+            if (map != null)
+                chara = SetCharacterData(roles, map);
+            SpaceData spaceData = new SpaceData()
+            {
+                Name = map.Name,
+                ID = map.SpaceId,
+            };
+
+            netConnection.Set<SpaceData>(spaceData);
+            netConnection.Set<CharacterData>(chara);
+            GameMapService.Instance.SetSpace(spaceData);
             GameEnterResponse response = new GameEnterResponse();
             response.Success = true;
             response.Entity = chara.GetEntityData();
             response.Character = chara.characterInfo;
-            ///通知登录成功
             netConnection.SendDataToClient(response);
-            var space = GameMapService.Instance.GetSpace(6);//新手村6
-            space.CharacterJoin(netConnection, chara);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="roles"></param>
+        /// <param name="map"></param>
+        /// <returns></returns>
+        private CharacterData SetCharacterData(DBCharacter roles, DBCharacterMap map)
+        {
+            int entityID = EntityManager.Instance.NewEntityId;
+            CharacterData chara = new CharacterData(entityID, new Vector3Int(map.XPos, map.Ypos, map.Zpos), Vector3Int.one);
+            chara.id = roles.Id;
+            chara.Name = roles.Name;
+            chara.Level = roles.Level;
+            chara.player_ID = roles.PlayerID;
+            chara.characterInfo.Id = roles.Id;
+            chara.characterInfo.Name = roles.Name;
+            chara.characterInfo.Level = roles.Level;
+            chara.characterInfo.TypeId = roles.JobID;
+            chara.characterInfo.Exp = roles.Exp;
+            chara.characterInfo.SpaceId = roles.SpaceID;
+            chara.characterInfo.Gold = roles.Gold;
+            chara.characterInfo.Hp = roles.Hp;
+            chara.characterInfo.Mp = roles.Mp;
+            return chara;
         }
     }
 }
