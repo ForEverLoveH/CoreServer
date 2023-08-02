@@ -14,6 +14,7 @@ namespace CoreServer.MMOModel
         {
         }
 
+        public SpaceData SpaceData { get; set; }
         public int id { get; set; }
         public NCharacter characterInfo { get; set; } = new NCharacter();
     }

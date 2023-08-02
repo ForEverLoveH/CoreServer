@@ -61,17 +61,6 @@ namespace CoreServer.MMOModel
             return data;
         }
 
-        private int spaceId;
-
-        public int SpceID
-        {
-            get { return this.spaceId; }
-            set
-            {
-                this.spaceId = value;
-            }
-        }
-
         private int entityid { get; set; }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace CoreServer.GameService
         private void _EntitySyncRequest(Connection netConnection, EntitySyncRequest messageData)
         {
             //获取当前角色所在的地图
-            var space = netConnection.Get<SpaceData>();
+            var space = netConnection.Get<CharacterData>()?.SpaceData;
             var play = netConnection.Get<CharacterData>();
             if (space == null || play == null)
                 return;

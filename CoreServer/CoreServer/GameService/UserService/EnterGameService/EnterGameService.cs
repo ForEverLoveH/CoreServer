@@ -46,9 +46,9 @@ namespace CoreServer.GameService
                 ID = map.SpaceId,
             };
 
-            netConnection.Set<SpaceData>(spaceData);
+            chara.SpaceData = spaceData;
             netConnection.Set<CharacterData>(chara);
-            GameMapService.Instance.SetSpace(spaceData);
+            GameMapManager.Instance.SetSpace(spaceData);
             GameEnterResponse response = new GameEnterResponse();
             response.Success = true;
             response.Entity = chara.GetEntityData();

@@ -16,6 +16,7 @@ namespace CoreServer.MMOModel
     public class SpaceData
     {
         private IFreeSql freeSql = FreeSqlHelper.mysql;
+        private SpaceDataModel SpaceDataMode { get; set; }
 
         /// <summary>
         /// 标识
@@ -37,8 +38,18 @@ namespace CoreServer.MMOModel
         /// </summary>
         public string Music { get; set; }
 
+        public SpaceData()
+        { }
+
+        public SpaceData(SpaceDataModel data)
+        {
+            this.SpaceDataMode = data;
+            this.ID = data.SID;
+            this.Name = data.Name;
+        }
+
         /// <summary>
-        /// 角色字典(当前场景中所有角色)
+        /// 角色字典(当前场景中所有角色)(角色id0
         /// </summary>
         private Dictionary<int, CharacterData> CharacterDataDic = new Dictionary<int, CharacterData>();
 
@@ -54,11 +65,11 @@ namespace CoreServer.MMOModel
         /// <param name="character"></param>
         public void CharacterJoin(Connection connection, CharacterData character)
         {
-            Log.Information("角色进入场景:" + character.EntityID);
+            Log.Information("角色进入场景:" + character.id);
             character.connection = connection;
 
-            character.SpceID = this.ID;
-            CharacterDataDic[character.EntityID] = character;
+            character.SpaceData = this;
+            CharacterDataDic[character.id] = character;
             if (!CharacterConnection.ContainsKey(connection))
             {
                 CharacterConnection[connection] = character;
@@ -162,7 +173,7 @@ namespace CoreServer.MMOModel
         {
             Log.Information("角色离开场景:" + character.EntityID);
             connection.Set<SpaceData>(null);
-            CharacterDataDic.Remove(character.EntityID);
+            CharacterDataDic.Remove(character.id);
             SpaceCharacterLeaveResponse response = new SpaceCharacterLeaveResponse();
             response.EntityId = character.EntityID;
             foreach (var kv in CharacterDataDic)

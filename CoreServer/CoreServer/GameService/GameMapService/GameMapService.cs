@@ -2,6 +2,7 @@
 using CoreCommon.MessageData;
 using CoreCommon.NetCommon;
 using CoreServer.FreeSqlService;
+using CoreServer.Manager;
 using CoreServer.MMOModel;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,12 @@ namespace CoreServer.GameService
     {
         private IFreeSql freeSql = FreeSqlHelper.mysql;
 
-        /// <summary>
-        /// 地图字典
-        /// </summary>
-        private Dictionary<int, SpaceData> spaceDict = new Dictionary<int, SpaceData>();
-
         public void Start()
         {
+            //初始化地图
+            GameMapManager.Instance.InitMapData();
             MessageRouter.Instance.OnMessage<SpaceCharactersEnterRequest>(_SpaceCharactersEnterRequest);
             MessageRouter.Instance.OnMessage<SpaceCharacterLeaveRequest>(_SpaceCharacterLeaveRequest);
-            SpaceData space = new SpaceData();
         }
 
         /// <summary>
@@ -38,7 +35,7 @@ namespace CoreServer.GameService
         private void _SpaceCharactersEnterRequest(Connection netConnection, SpaceCharactersEnterRequest messageData)
         {
             int spaceID = messageData.SpaceID;
-            var spacedata = netConnection.Get<SpaceData>();
+            var spacedata = netConnection.Get<CharacterData>()?.SpaceData;
             var charaData = netConnection.Get<CharacterData>();
             if (spacedata != null)
             {
@@ -62,13 +59,7 @@ namespace CoreServer.GameService
         /// <returns></returns>
         public SpaceData GetSpace(int spaceId)
         {
-            return spaceDict[spaceId];
-        }
-
-        public void SetSpace(SpaceData spaceData)
-        {
-            if (!spaceDict.ContainsKey(spaceData.ID))
-                spaceDict.Add(spaceData.ID, spaceData);
+            return GameMapManager.Instance.GetSpaceData(spaceId);
         }
 
         /// <summary>

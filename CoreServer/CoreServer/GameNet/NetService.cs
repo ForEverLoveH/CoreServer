@@ -55,7 +55,7 @@ namespace CoreServer.GameNet
         private void ClientDisContion(Connection connection)
         {
             Log.Information("连接断开" + connection);
-            var sapce = connection.Get<SpaceData>();
+            var sapce = connection.Get<CharacterData>()?.SpaceData;
             if (sapce != null)
             {
                 var character = connection.Get<CharacterData>();
