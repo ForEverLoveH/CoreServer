@@ -97,18 +97,30 @@ namespace CoreServer.Manager
                         MonsterName = monster.Name,
                         HP = monster.HP,
                         Level = monster.Level,
-                        SpceID = monster.SpceID,
+                        SpaceID = monster.SpceID,
                         Type = monster.Type,
+                    };
+                    DBMonsterMap dBMonsterMap = new DBMonsterMap()
+                    {
+                        SpaceId = monster.SpceID,
+                        Name = monster.Name,
                         XPos = monster.XPos,
-                        YPos = monster.YPos,
-                        ZPos = monster.ZPos,
-                        XRoutation = monster.XRoutation,
-                        YRoutation = monster.YRoutation,
+                        Ypos = monster.YPos,
+                        Zpos = monster.ZPos,
+                        XRoutation = monster.ZRoutation,
+                        YRoutation = monster.ZRoutation,
                         ZRoutation = monster.ZRoutation,
                     };
-                    var sl = freeSql.Select<DBMonsterData>().Where(x => x.SpceID == dBMonsterData.SpceID && x.MonsterID == dBMonsterData.MonsterID && x.MonsterName == dBMonsterData.MonsterName).ToOne();
+                    var sl = freeSql.Select<DBMonsterData>().Where(x => x.SpaceID == dBMonsterData.SpaceID && x.MonsterID == dBMonsterData.MonsterID && x.MonsterName == dBMonsterData.MonsterName).ToOne();
                     if (sl == null)
+                    {
                         freeSql.InsertOrUpdate<DBMonsterData>().SetSource(dBMonsterData).IfExistsDoNothing().ExecuteAffrows();
+                        var pl = freeSql.Select<DBMonsterMap>().Where(x => x.SpaceId == dBMonsterMap.SpaceId && x.Name == dBMonsterMap.Name).ToOne();
+                        if (pl == null)
+                        {
+                            freeSql.InsertOrUpdate<DBMonsterMap>().SetSource(dBMonsterMap).IfExistsDoNothing().ExecuteAffrows();
+                        }
+                    }
                     else
                         continue;
                 }

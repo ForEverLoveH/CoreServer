@@ -95,6 +95,9 @@ namespace CoreServer.MMOModel
             Characters.Clear();
         }
 
+        /// <summary>
+        ///
+        /// </summary>
         private void SaveCharacterDataToDataBase()
         {
             foreach (var chara in Characters.Values)

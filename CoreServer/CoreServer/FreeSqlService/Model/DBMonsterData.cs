@@ -41,36 +41,6 @@ namespace CoreServer.FreeSqlService.Model
         /// <summary>
         /// 场景id
         /// </summary>
-        public int SpceID { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int XPos { get; set; } // 位置(X)
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int YPos { get; set; } // 位置(Y)
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int ZPos { get; set; } // 位置(Z)
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int XRoutation { get; set; }// 旋转(X)
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int YRoutation { get; set; }// 旋转(Y)
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int ZRoutation { get; set; } // 旋转(Z)
+        public int SpaceID { get; set; }
     }
 }

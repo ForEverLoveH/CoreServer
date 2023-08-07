@@ -2,6 +2,7 @@
 using CoreCommon.MessageData;
 using CoreCommon.NetCommon;
 using CoreServer.FreeSqlService;
+using CoreServer.MMOModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace CoreServer.GameService
     public class MonsterService : Singleton<MonsterService>
     {
         private IFreeSql freeSql = FreeSqlHelper.mysql;
+
         /// <summary>
         ///
         /// </summary>
@@ -20,6 +22,7 @@ namespace CoreServer.GameService
         {
             MessageRouter.Instance.OnMessage<MonsterCharacterRequest>(_MonsterCharacterRequest);
         }
+
         /// <summary>
         ///
         /// </summary>
@@ -30,13 +33,6 @@ namespace CoreServer.GameService
             var spaceID = messageData.SpaceID;
             MonsterManager.Instance.InitData(spaceID);
             MonsterCharacterResponse monsterCharacterResponse = new MonsterCharacterResponse();
-            var datas = MonsterManager.Instance.GetMonsterDatas(spaceID);
-            if (datas != null && datas.Count > 0)
-            {
-                foreach (var data in datas)
-                {
-                }
-            }
         }
     }
 }

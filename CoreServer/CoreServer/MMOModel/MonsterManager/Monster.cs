@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using CoreServer.FreeSqlService.Model;
 
 namespace CoreServer.MMOModel
 {
@@ -13,5 +14,8 @@ namespace CoreServer.MMOModel
         public Monster(Vector3Int pos, Vector3Int rotation) : base(pos, rotation)
         {
         }
+
+
+        public DBMonsterMap character { get; set; }
     }
 }
