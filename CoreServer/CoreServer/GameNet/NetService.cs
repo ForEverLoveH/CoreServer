@@ -60,6 +60,7 @@ namespace CoreServer.GameNet
             {
                 var character = connection.Get<CharacterData>();
                 sapce.CharacterLeave(connection, character);
+                CharacterManager.Instance.RemoveCharacterData(character.id);
             }
         }
 
@@ -82,7 +83,7 @@ namespace CoreServer.GameNet
             tcpService.StartService();
             MessageRouter.Instance.Start(10);
             MessageRouter.Instance.OnMessage<HeartBeatRequest>(_HeartBeatRequest);
-            Timer timer = new Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
+            Timer timer = new Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromSeconds(3));
         }
 
         /// <summary>

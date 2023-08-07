@@ -77,7 +77,7 @@ namespace CoreServer.MMOModel
             //把新进入广播给当前场景中的所有玩家
             SpaceCharactersEnterResponse response = new SpaceCharactersEnterResponse();
             response.SpaceId = this.ID;//场景id
-            response.EntityList.Add(character.GetEntityData());
+            response.EntityList.Add(character.EntityData);
             foreach (var kv in CharacterDataDic)
             {
                 //发送这个上线 消息给其它人不是自己
@@ -91,7 +91,7 @@ namespace CoreServer.MMOModel
             {
                 if (kv.Value.connection == connection) continue;
                 response.EntityList.Clear();
-                response.EntityList.Add(kv.Value.GetEntityData());
+                response.EntityList.Add(kv.Value.EntityData);
                 connection.SendDataToClient(response);
             }
         }
@@ -112,7 +112,7 @@ namespace CoreServer.MMOModel
                     //表示自己
                     if (kv.Value.EntityID == enitySync.Entity.Id)
                     {
-                        kv.Value.SetEntityData(enitySync.Entity);
+                        kv.Value.EntityData = enitySync.Entity;
                         int playerID = player.player_ID;
                         int jobID = player.characterInfo.TypeId;
                         int spaceID = space.ID;
@@ -145,6 +145,10 @@ namespace CoreServer.MMOModel
                                 response.EntityList.Add(nEntity);
                             }
                         }
+                        var chara = kv.Value;
+                        chara.character.XPos = enitySync.Entity.Position.X;
+                        chara.character.Ypos = enitySync.Entity.Position.Y;
+                        chara.character.Zpos = enitySync.Entity.Position.Z;
                     }
                     else
                     {

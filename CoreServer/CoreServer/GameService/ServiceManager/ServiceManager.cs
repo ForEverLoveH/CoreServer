@@ -1,5 +1,7 @@
 ﻿using CoreCommon;
+using CoreCommon.Schedule;
 using CoreServer.GameNet;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,23 @@ namespace CoreServer.GameService
             StartUserService();
             StartGameMapService();
             StartEntityService();
+            StartMonsterService();
+            StartScheduleService();
+        }
+
+        //启动中心计时器
+        private void StartScheduleService()
+        {
+            ScheduleManager.Instance.Start();
+            Log.Information("中心计时器启动完成！！");
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        private void StartMonsterService()
+        {
+            MonsterService.Instance.StartService();
         }
 
         /// <summary>

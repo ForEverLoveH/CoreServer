@@ -77,7 +77,7 @@ namespace CoreServer.GameService
         }
 
         /// <summary>
-        ///
+        ///随机纯字母
         /// </summary>
         /// <param name="len"></param>
         /// <param name="sleep"></param>

@@ -23,13 +23,18 @@ namespace CoreServer.GameService
 
         public void InitMapData()
         {
-            foreach (var space in SpaceDataManager.Instance.SpaceDic)
+            foreach (var space in ConfigurationDataManager.Instance.SpaceDic)
             {
                 mapDic[space.Key] = new SpaceData(space.Value);
                 Log.Information("初始化地图:" + space.Value.Name);
             }
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="spaceId"></param>
+        /// <returns></returns>
         public SpaceData GetSpaceData(int spaceId)
         {
             return mapDic[spaceId];
@@ -47,7 +52,7 @@ namespace CoreServer.GameService
             }
             else
             {
-                if (!mapDic.ContainsValue(spaceData))
+                if (!mapDic.ContainsValue(spaceData) && !mapDic.ContainsKey(spaceData.ID))
                 {
                     mapDic.Add(spaceData.ID, spaceData);
                 }

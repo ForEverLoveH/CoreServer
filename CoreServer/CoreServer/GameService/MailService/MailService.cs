@@ -165,6 +165,7 @@ namespace CoreServer.GameService
         /// <param name="replyTo"></param>
         /// <param name="sendOK"></param>
         /// <returns></returns>
+
         public string SendMail(string mailSubjct, string mailBody, string mailFrom, List<string> mailAddress, string HostIP, int port, string username, string password, bool ssl, string replyTo, out bool sendOK)
         {
             sendOK = true;

@@ -10,7 +10,7 @@ namespace CoreServer.MMOModel
 {
     public class Monster : ActorData
     {
-        public Monster(int entityID, Vector3Int pos, Vector3Int rotation) : base(entityID, pos, rotation)
+        public Monster(Vector3Int pos, Vector3Int rotation) : base(pos, rotation)
         {
         }
     }

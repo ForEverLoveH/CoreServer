@@ -1,7 +1,9 @@
 ﻿using CoreCommon.NetCommon;
+using CoreCommon.Schedule;
 using CoreServer.FreeSqlService;
 using CoreServer.Manager;
 using Org.BouncyCastle.Bcpg.Sig;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +20,10 @@ namespace CoreServer.MMOModel
     /// </summary>
     public class CharacterData : ActorData
     {
+        public CharacterData(Vector3Int pos, Vector3Int rotation) : base(pos, rotation)
+        {
+        }
+
         private IFreeSql freeSql = FreeSqlHelper.mysql;
 
         /// <summary>
@@ -25,11 +31,20 @@ namespace CoreServer.MMOModel
         /// </summary>
         public Connection connection;
 
-        public CharacterData(int entityID, Vector3Int pos, Vector3Int rotation) : base(entityID, pos, rotation)
-        {
-        }
-
         public string playerName { get; set; }
         public int player_ID { get; set; }
+
+        /// <summary>
+        /// 当前角色对应的数据库对象
+        /// </summary>
+        public DBCharacterMap character { get; set; }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        private void SaveCharacterData()
+        {
+            Log.Information("保存信息");
+        }
     }
 }

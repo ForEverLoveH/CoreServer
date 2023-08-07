@@ -37,7 +37,7 @@ namespace CoreServer.MMOModel
         /// </summary>
         /// <param name="path">文件路径</param>
         /// <returns></returns>
-        public Dictionary<int, T> LoadingCurrentSpaceData<T>(string path)
+        public Dictionary<int, T> LoadingCurrentJsonData<T>(string path)
         {
             if (string.IsNullOrEmpty(path))
             {
