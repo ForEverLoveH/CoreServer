@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static CoreCommon.NetCommon.NetServer.TcpService;
+
 using CoreCommon.GameLog;
 using Serilog;
 using Google.Protobuf;
@@ -14,51 +14,61 @@ namespace CoreCommon.NetCommon.NetServer
 {
     /// <summary>
     /// 负责tcp 网络端口，异步接收
-    /// 
+    ///
     /// </summary>
     public class TcpService
     {
         private IPEndPoint endPoint;
         private Socket serverSocket;
         private int balckLog = 100;
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="connection"></param>
         public delegate void NewConnectionedCallBack(Connection connection);
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="data"></param>
-        public delegate void  DataReceviedCallback(Connection connection,IMessage data);
+        public delegate void DataReceviedCallback(Connection connection, IMessage data);
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="connection"></param>
-        public delegate void   DisConnectionCallBack(Connection connection);
+        public delegate void DisConnectionCallBack(Connection connection);
+
         /// <summary>
         /// 客户端接入事件
         /// </summary>
         public event EventHandler<Socket> _socketConnected;
+
         /// <summary>
         /// 事件委托 新建连接
         /// </summary>
         public event NewConnectionedCallBack NewConnection;
+
         /// <summary>
         /// 事件委托断开连接
         /// </summary>
         public event DisConnectionCallBack DisConnection;
+
         /// <summary>
         /// 收到消息的委托
         /// </summary>
         public event DataReceviedCallback DataRecevied;
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public bool IsRunning { get { return serverSocket != null; } }
+        public bool IsRunning
+        { get { return serverSocket != null; } }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host"></param>
         /// <param name="port"></param>
@@ -66,20 +76,22 @@ namespace CoreCommon.NetCommon.NetServer
         {
             endPoint = new IPEndPoint(IPAddress.Parse(host), port);
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host"></param>
         /// <param name="port"></param>
         /// <param name="block"></param>
-        public TcpService(string host,int port,  int block) :this(host,port)
+        public TcpService(string host, int port, int block) : this(host, port)
         {
             this.balckLog = block;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public void StartService( )
+        public void StartService()
         {
             lock (this)
             {
@@ -99,6 +111,7 @@ namespace CoreCommon.NetCommon.NetServer
                 }
             }
         }
+
         /// <summary>
         /// 处理连接
         /// </summary>
@@ -109,15 +122,15 @@ namespace CoreCommon.NetCommon.NetServer
             Socket client = e.AcceptSocket as Socket;
             e.AcceptSocket = null;
             serverSocket.AcceptAsync(e);
-            if (e.SocketError== SocketError.Success)
+            if (e.SocketError == SocketError.Success)
             {
-                if(client != null)
+                if (client != null)
                 {
                     HandleNewConnection(client);
                 }
-                
             }
         }
+
         /// <summary>
         /// 新socket接入
         /// </summary>
@@ -130,8 +143,9 @@ namespace CoreCommon.NetCommon.NetServer
             connection.disconnectCallBack += (connection) => DisConnection?.Invoke(connection);
             NewConnection?.Invoke(connection);
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void StopService()
         {

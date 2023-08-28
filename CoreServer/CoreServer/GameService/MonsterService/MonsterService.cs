@@ -24,7 +24,7 @@ namespace CoreServer.GameService
         }
 
         /// <summary>
-        ///
+        ///获取场景中的怪物
         /// </summary>
         /// <param name="netConnection"></param>
         /// <param name="messageData"></param>
@@ -33,6 +33,21 @@ namespace CoreServer.GameService
             var spaceID = messageData.SpaceID;
             MonsterManager.Instance.InitData(spaceID);
             MonsterCharacterResponse monsterCharacterResponse = new MonsterCharacterResponse();
+            List<Monster> monsters = MonsterManager.Instance.GetCurrentSpaceMonsterData(spaceID);
+            foreach (Monster monster in monsters)
+            {
+                monsterCharacterResponse.MonsterList.Add(new NCharacter()
+                {
+                    Level = monster.Level,
+                    Name = monster.Name,
+                    Entity = monster.EntityData,
+                    SpaceId = spaceID,
+                    EntityId = monster.EntityID,
+                    Hp = monster.HP,
+                    Id = monster.id,
+                });
+            }
+            netConnection.SendDataToClient(monsterCharacterResponse);
         }
     }
 }

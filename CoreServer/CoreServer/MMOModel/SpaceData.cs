@@ -77,7 +77,8 @@ namespace CoreServer.MMOModel
             //把新进入广播给当前场景中的所有玩家
             SpaceCharactersEnterResponse response = new SpaceCharactersEnterResponse();
             response.SpaceId = this.ID;//场景id
-            response.EntityList.Add(character.EntityData);
+            //response.EntityList.Add(character.EntityData);
+            response.CharacterList.Add(character.characterInfo);
             foreach (var kv in CharacterDataDic)
             {
                 //发送这个上线 消息给其它人不是自己
@@ -90,8 +91,8 @@ namespace CoreServer.MMOModel
             foreach (var kv in CharacterDataDic)
             {
                 if (kv.Value.connection == connection) continue;
-                response.EntityList.Clear();
-                response.EntityList.Add(kv.Value.EntityData);
+                response.CharacterList.Clear();
+                response.CharacterList.Add(kv.Value.characterInfo);
                 connection.SendDataToClient(response);
             }
         }

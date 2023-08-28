@@ -5,7 +5,8 @@ using CoreCommon.NetCommon;
 using CoreServer.FreeSqlService;
 using CoreServer.MMOModel;
 using CoreServer.MySqlService;
-using Org.BouncyCastle.Security;
+
+//using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;

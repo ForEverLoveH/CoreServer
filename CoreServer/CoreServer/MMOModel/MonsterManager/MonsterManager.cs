@@ -7,6 +7,7 @@ using CoreServer.Manager;
 using CoreServer.MMOModel.JsonModel;
 using FreeSql;
 using System.Collections.Concurrent;
+using System.Xml.Linq;
 
 namespace CoreServer.MMOModel
 {

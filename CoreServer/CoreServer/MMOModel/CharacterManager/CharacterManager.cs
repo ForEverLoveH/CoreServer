@@ -41,11 +41,14 @@ namespace CoreServer.MMOModel
         /// <returns></returns>
         public CharacterData CreateCharacterData(DBCharacter roles, DBCharacterMap map)
         {
-            CharacterData chara = new CharacterData(new Vector3Int(map.XPos, map.Ypos, map.Zpos), Vector3Int.one);
+            Vector3Int sl = new Vector3Int(map.XPos, map.Ypos, map.Zpos);
+            CharacterData chara = new CharacterData(sl, Vector3Int.one);
             chara.id = roles.Id;
             chara.Name = roles.Name;
             chara.Level = roles.Level;
             chara.player_ID = roles.PlayerID;
+            chara.EntityData = new NEntity() { Position = sl, Direction = Vector3Int.one };
+
             chara.characterInfo.Id = roles.Id;
             chara.characterInfo.Name = roles.Name;
             chara.characterInfo.Level = roles.Level;
@@ -55,6 +58,7 @@ namespace CoreServer.MMOModel
             chara.characterInfo.Gold = roles.Gold;
             chara.characterInfo.Hp = roles.Hp;
             chara.characterInfo.Mp = roles.Mp;
+            chara.characterInfo.Entity = chara.EntityData;
             chara.character = map;
             Characters.TryAdd(roles.Id, chara);
             EntityManager.Instance.AddEntity(roles.SpaceID, chara);

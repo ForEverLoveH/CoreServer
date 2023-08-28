@@ -38,6 +38,14 @@ namespace CoreServer.MMOModel
 
         private NEntity Nentity;
 
+        private int hp { get; set; }
+        public int HP
+        { get { return hp; } set { hp = value; } }
+
+        private int mp { get; set; }
+        public int MP
+        { get { return mp; } set { mp = value; } }
+
         /// <summary>
         /// 唯一编号
         /// </summary>

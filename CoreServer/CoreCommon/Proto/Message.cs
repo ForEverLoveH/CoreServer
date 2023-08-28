@@ -36,38 +36,37 @@ public static partial class MessageReflection {
           "cGFjZUVudGl0eVN5bmNSZXF1ZXN0EiAKCmVudGl0eVN5bmMYASABKAsyDC5O",
           "RW50aXR5U3luYyI7ChdTcGFjZUVudGl0eVN5bmNSZXNwb25zZRIgCgplbnRp",
           "dHlTeW5jGAEgASgLMgwuTkVudGl0eVN5bmMiJwoQR2FtZUVudGVyUmVxdWVz",
-          "dBITCgtjaGFyYWN0ZXJJZBgBIAEoBSJeChFHYW1lRW50ZXJSZXNwb25zZRIP",
-          "CgdzdWNjZXNzGAEgASgIEhgKBmVudGl0eRgCIAEoCzIILk5FbnRpdHkSHgoJ",
-          "Y2hhcmFjdGVyGAMgASgLMgsuTkNoYXJhY3RlciIuChtTcGFjZUNoYXJhY3Rl",
-          "cnNFbnRlclJlcXVlc3QSDwoHc3BhY2VJRBgBIAEoBSJNChxTcGFjZUNoYXJh",
-          "Y3RlcnNFbnRlclJlc3BvbnNlEg8KB3NwYWNlSWQYASABKAUSHAoKZW50aXR5",
-          "TGlzdBgCIAMoCzIILk5FbnRpdHkiLQoaU3BhY2VDaGFyYWN0ZXJMZWF2ZVJl",
-          "cXVlc3QSDwoHc3BhY2VJRBgBIAEoBSIvChtTcGFjZUNoYXJhY3RlckxlYXZl",
-          "UmVzcG9uc2USEAoIZW50aXR5SWQYASABKAUiSwoTVXNlclJlZ2lzdGVyUmVx",
-          "dWVzdBIQCgh1c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCRIQCgh0",
-          "ZWxwaG9uZRgDIAEoCSI1ChRVc2VyUmVnaXN0ZXJSZXNwb25zZRIMCgRjb2Rl",
-          "GAEgASgFEg8KB21lc3NhZ2UYAiABKAkiNgoQVXNlckxvZ2luUmVxdWVzdBIQ",
-          "Cgh1c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSJDChFVc2VyTG9n",
-          "aW5SZXNwb25zZRIPCgdzdWNjZXNzGAMgASgIEgwKBGNvZGUYASABKAUSDwoH",
-          "bWVzc2FnZRgCIAEoCSI0ChFFbnRpdHlTeW5jUmVxdWVzdBIfCgllbml0eVN5",
-          "bmMYASABKAsyDC5ORW50aXR5U3luYyIyChJFbnRpdHlTeW5jUmVzcG9uc2US",
-          "HAoKZW50aXR5TGlzdBgBIAMoCzIILk5FbnRpdHkiLwoTRW50aXR5RW50ZXJS",
-          "ZXNwb25zZRIYCgZlbnRpdHkYASABKAsyCC5ORW50aXR5IjcKFkNoYXJhY3Rl",
-          "ckNyZWF0ZVJlcXVlc3QSDAoEbmFtZRgBIAEoCRIPCgdqb2JUeXBlGAIgASgF",
-          "IloKFkNocmFjdGVyQ3JlYXRlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIP",
-          "CgdtZXNzYWdlGAIgASgJEh4KCWNoYXJhY3RlchgDIAEoCzILLk5DaGFyYWN0",
-          "ZXIiFgoUQ2hhcmFjdGVyTGlzdFJlcXVlc3QiOwoVQ2hhcmFjdGVyTGlzdFJl",
-          "c3BvbnNlEiIKDWNoYXJhY3Rlckxpc3QYASADKAsyCy5OQ2hhcmFjdGVyIi0K",
-          "FkNoYXJhY3RlckRlbGV0ZVJlcXVlc3QSEwoLY2hhcmFjdGVySWQYASABKAUi",
-          "OwoXQ2hhcmFjdGVyRGVsZXRlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIP",
-          "CgdtZXNzYWdlGAIgASgJIicKFE5QQ0NoYXJhY3RlclJlc3F1ZXN0Eg8KB3Nw",
-          "YWNlSUQYASABKAUiTgoUTlBDQ2hhcmFjdGVyUmVzcG9uc2USHAoHbnBjTGlz",
-          "dBgBIAMoCzILLk5DaGFyYWN0ZXISGAoGZW50aXR5GAIgASgLMgguTkVudGl0",
-          "eSIqChdNb25zdGVyQ2hhcmFjdGVyUmVxdWVzdBIPCgdzcGFjZUlEGAEgASgF",
-          "IlIKGE1vbnN0ZXJDaGFyYWN0ZXJSZXNwb25zZRIcCgducGNMaXN0GAEgAygL",
-          "MgsuTkNoYXJhY3RlchIYCgZlbnRpdHkYAiABKAsyCC5ORW50aXR5KjUKC0Vu",
-          "dGl0eVN0YXRlEggKBE5PTkUQABIICgRJRExFEAESCAoETU9WRRACEggKBEpV",
-          "TVAQA2IGcHJvdG8z"));
+          "dBITCgtjaGFyYWN0ZXJJZBgBIAEoBSJEChFHYW1lRW50ZXJSZXNwb25zZRIP",
+          "CgdzdWNjZXNzGAEgASgIEh4KCWNoYXJhY3RlchgDIAEoCzILLk5DaGFyYWN0",
+          "ZXIiLgobU3BhY2VDaGFyYWN0ZXJzRW50ZXJSZXF1ZXN0Eg8KB3NwYWNlSUQY",
+          "ASABKAUiUwocU3BhY2VDaGFyYWN0ZXJzRW50ZXJSZXNwb25zZRIPCgdzcGFj",
+          "ZUlkGAEgASgFEiIKDWNoYXJhY3Rlckxpc3QYAiADKAsyCy5OQ2hhcmFjdGVy",
+          "Ii0KGlNwYWNlQ2hhcmFjdGVyTGVhdmVSZXF1ZXN0Eg8KB3NwYWNlSUQYASAB",
+          "KAUiLwobU3BhY2VDaGFyYWN0ZXJMZWF2ZVJlc3BvbnNlEhAKCGVudGl0eUlk",
+          "GAEgASgFIksKE1VzZXJSZWdpc3RlclJlcXVlc3QSEAoIdXNlcm5hbWUYASAB",
+          "KAkSEAoIcGFzc3dvcmQYAiABKAkSEAoIdGVscGhvbmUYAyABKAkiNQoUVXNl",
+          "clJlZ2lzdGVyUmVzcG9uc2USDAoEY29kZRgBIAEoBRIPCgdtZXNzYWdlGAIg",
+          "ASgJIjYKEFVzZXJMb2dpblJlcXVlc3QSEAoIdXNlcm5hbWUYASABKAkSEAoI",
+          "cGFzc3dvcmQYAiABKAkiQwoRVXNlckxvZ2luUmVzcG9uc2USDwoHc3VjY2Vz",
+          "cxgDIAEoCBIMCgRjb2RlGAEgASgFEg8KB21lc3NhZ2UYAiABKAkiNAoRRW50",
+          "aXR5U3luY1JlcXVlc3QSHwoJZW5pdHlTeW5jGAEgASgLMgwuTkVudGl0eVN5",
+          "bmMiMgoSRW50aXR5U3luY1Jlc3BvbnNlEhwKCmVudGl0eUxpc3QYASADKAsy",
+          "CC5ORW50aXR5Ii8KE0VudGl0eUVudGVyUmVzcG9uc2USGAoGZW50aXR5GAEg",
+          "ASgLMgguTkVudGl0eSI3ChZDaGFyYWN0ZXJDcmVhdGVSZXF1ZXN0EgwKBG5h",
+          "bWUYASABKAkSDwoHam9iVHlwZRgCIAEoBSJaChZDaHJhY3RlckNyZWF0ZVJl",
+          "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIeCglj",
+          "aGFyYWN0ZXIYAyABKAsyCy5OQ2hhcmFjdGVyIhYKFENoYXJhY3Rlckxpc3RS",
+          "ZXF1ZXN0IjsKFUNoYXJhY3Rlckxpc3RSZXNwb25zZRIiCg1jaGFyYWN0ZXJM",
+          "aXN0GAEgAygLMgsuTkNoYXJhY3RlciItChZDaGFyYWN0ZXJEZWxldGVSZXF1",
+          "ZXN0EhMKC2NoYXJhY3RlcklkGAEgASgFIjsKF0NoYXJhY3RlckRlbGV0ZVJl",
+          "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSInChRO",
+          "UENDaGFyYWN0ZXJSZXNxdWVzdBIPCgdzcGFjZUlEGAEgASgFIk4KFE5QQ0No",
+          "YXJhY3RlclJlc3BvbnNlEhwKB25wY0xpc3QYASADKAsyCy5OQ2hhcmFjdGVy",
+          "EhgKBmVudGl0eRgCIAEoCzIILk5FbnRpdHkiKgoXTW9uc3RlckNoYXJhY3Rl",
+          "clJlcXVlc3QSDwoHc3BhY2VJRBgBIAEoBSJWChhNb25zdGVyQ2hhcmFjdGVy",
+          "UmVzcG9uc2USIAoLTW9uc3Rlckxpc3QYASADKAsyCy5OQ2hhcmFjdGVyEhgK",
+          "BmVudGl0eRgCIAEoCzIILk5FbnRpdHkqNQoLRW50aXR5U3RhdGUSCAoETk9O",
+          "RRAAEggKBElETEUQARIICgRNT1ZFEAISCAoESlVNUBADYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EntityState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,9 +80,9 @@ public static partial class MessageReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::SpaceEntitySyncRequest), global::SpaceEntitySyncRequest.Parser, new[]{ "EntitySync" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SpaceEntitySyncResponse), global::SpaceEntitySyncResponse.Parser, new[]{ "EntitySync" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameEnterRequest), global::GameEnterRequest.Parser, new[]{ "CharacterId" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::GameEnterResponse), global::GameEnterResponse.Parser, new[]{ "Success", "Entity", "Character" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GameEnterResponse), global::GameEnterResponse.Parser, new[]{ "Success", "Character" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SpaceCharactersEnterRequest), global::SpaceCharactersEnterRequest.Parser, new[]{ "SpaceID" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::SpaceCharactersEnterResponse), global::SpaceCharactersEnterResponse.Parser, new[]{ "SpaceId", "EntityList" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SpaceCharactersEnterResponse), global::SpaceCharactersEnterResponse.Parser, new[]{ "SpaceId", "CharacterList" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SpaceCharacterLeaveRequest), global::SpaceCharacterLeaveRequest.Parser, new[]{ "SpaceID" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SpaceCharacterLeaveResponse), global::SpaceCharacterLeaveResponse.Parser, new[]{ "EntityId" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::UserRegisterRequest), global::UserRegisterRequest.Parser, new[]{ "Username", "Password", "Telphone" }, null, null, null, null),
@@ -102,7 +101,7 @@ public static partial class MessageReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::NPCCharacterResquest), global::NPCCharacterResquest.Parser, new[]{ "SpaceID" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NPCCharacterResponse), global::NPCCharacterResponse.Parser, new[]{ "NpcList", "Entity" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MonsterCharacterRequest), global::MonsterCharacterRequest.Parser, new[]{ "SpaceID" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::MonsterCharacterResponse), global::MonsterCharacterResponse.Parser, new[]{ "NpcList", "Entity" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::MonsterCharacterResponse), global::MonsterCharacterResponse.Parser, new[]{ "MonsterList", "Entity" }, null, null, null, null)
         }));
   }
   #endregion
@@ -2641,7 +2640,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public GameEnterResponse(GameEnterResponse other) : this() {
     success_ = other.success_;
-    entity_ = other.entity_ != null ? other.entity_.Clone() : null;
     character_ = other.character_ != null ? other.character_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
@@ -2661,18 +2659,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
     get { return success_; }
     set {
       success_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity" field.</summary>
-  public const int EntityFieldNumber = 2;
-  private global::NEntity entity_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::NEntity Entity {
-    get { return entity_; }
-    set {
-      entity_ = value;
     }
   }
 
@@ -2704,7 +2690,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
       return true;
     }
     if (Success != other.Success) return false;
-    if (!object.Equals(Entity, other.Entity)) return false;
     if (!object.Equals(Character, other.Character)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -2714,7 +2699,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
   public override int GetHashCode() {
     int hash = 1;
     if (Success != false) hash ^= Success.GetHashCode();
-    if (entity_ != null) hash ^= Entity.GetHashCode();
     if (character_ != null) hash ^= Character.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -2738,10 +2722,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
       output.WriteRawTag(8);
       output.WriteBool(Success);
     }
-    if (entity_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Entity);
-    }
     if (character_ != null) {
       output.WriteRawTag(26);
       output.WriteMessage(Character);
@@ -2760,10 +2740,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
       output.WriteRawTag(8);
       output.WriteBool(Success);
     }
-    if (entity_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Entity);
-    }
     if (character_ != null) {
       output.WriteRawTag(26);
       output.WriteMessage(Character);
@@ -2780,9 +2756,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
     int size = 0;
     if (Success != false) {
       size += 1 + 1;
-    }
-    if (entity_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
     }
     if (character_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Character);
@@ -2801,12 +2774,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
     }
     if (other.Success != false) {
       Success = other.Success;
-    }
-    if (other.entity_ != null) {
-      if (entity_ == null) {
-        Entity = new global::NEntity();
-      }
-      Entity.MergeFrom(other.Entity);
     }
     if (other.character_ != null) {
       if (character_ == null) {
@@ -2833,13 +2800,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
           Success = input.ReadBool();
           break;
         }
-        case 18: {
-          if (entity_ == null) {
-            Entity = new global::NEntity();
-          }
-          input.ReadMessage(Entity);
-          break;
-        }
         case 26: {
           if (character_ == null) {
             Character = new global::NCharacter();
@@ -2864,13 +2824,6 @@ public sealed partial class GameEnterResponse : pb::IMessage<GameEnterResponse>
           break;
         case 8: {
           Success = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (entity_ == null) {
-            Entity = new global::NEntity();
-          }
-          input.ReadMessage(Entity);
           break;
         }
         case 26: {
@@ -3116,7 +3069,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public SpaceCharactersEnterResponse(SpaceCharactersEnterResponse other) : this() {
     spaceId_ = other.spaceId_;
-    entityList_ = other.entityList_.Clone();
+    characterList_ = other.characterList_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -3138,15 +3091,15 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
     }
   }
 
-  /// <summary>Field number for the "entityList" field.</summary>
-  public const int EntityListFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::NEntity> _repeated_entityList_codec
-      = pb::FieldCodec.ForMessage(18, global::NEntity.Parser);
-  private readonly pbc::RepeatedField<global::NEntity> entityList_ = new pbc::RepeatedField<global::NEntity>();
+  /// <summary>Field number for the "characterList" field.</summary>
+  public const int CharacterListFieldNumber = 2;
+  private static readonly pb::FieldCodec<global::NCharacter> _repeated_characterList_codec
+      = pb::FieldCodec.ForMessage(18, global::NCharacter.Parser);
+  private readonly pbc::RepeatedField<global::NCharacter> characterList_ = new pbc::RepeatedField<global::NCharacter>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::NEntity> EntityList {
-    get { return entityList_; }
+  public pbc::RepeatedField<global::NCharacter> CharacterList {
+    get { return characterList_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3165,7 +3118,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
       return true;
     }
     if (SpaceId != other.SpaceId) return false;
-    if(!entityList_.Equals(other.entityList_)) return false;
+    if(!characterList_.Equals(other.characterList_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -3174,7 +3127,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
   public override int GetHashCode() {
     int hash = 1;
     if (SpaceId != 0) hash ^= SpaceId.GetHashCode();
-    hash ^= entityList_.GetHashCode();
+    hash ^= characterList_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -3197,7 +3150,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
       output.WriteRawTag(8);
       output.WriteInt32(SpaceId);
     }
-    entityList_.WriteTo(output, _repeated_entityList_codec);
+    characterList_.WriteTo(output, _repeated_characterList_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -3212,7 +3165,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
       output.WriteRawTag(8);
       output.WriteInt32(SpaceId);
     }
-    entityList_.WriteTo(ref output, _repeated_entityList_codec);
+    characterList_.WriteTo(ref output, _repeated_characterList_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -3226,7 +3179,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
     if (SpaceId != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(SpaceId);
     }
-    size += entityList_.CalculateSize(_repeated_entityList_codec);
+    size += characterList_.CalculateSize(_repeated_characterList_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -3242,7 +3195,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
     if (other.SpaceId != 0) {
       SpaceId = other.SpaceId;
     }
-    entityList_.Add(other.entityList_);
+    characterList_.Add(other.characterList_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -3263,7 +3216,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
           break;
         }
         case 18: {
-          entityList_.AddEntriesFrom(input, _repeated_entityList_codec);
+          characterList_.AddEntriesFrom(input, _repeated_characterList_codec);
           break;
         }
       }
@@ -3286,7 +3239,7 @@ public sealed partial class SpaceCharactersEnterResponse : pb::IMessage<SpaceCha
           break;
         }
         case 18: {
-          entityList_.AddEntriesFrom(ref input, _repeated_entityList_codec);
+          characterList_.AddEntriesFrom(ref input, _repeated_characterList_codec);
           break;
         }
       }
@@ -7133,7 +7086,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public MonsterCharacterResponse(MonsterCharacterResponse other) : this() {
-    npcList_ = other.npcList_.Clone();
+    monsterList_ = other.monsterList_.Clone();
     entity_ = other.entity_ != null ? other.entity_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
@@ -7144,15 +7097,15 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
     return new MonsterCharacterResponse(this);
   }
 
-  /// <summary>Field number for the "npcList" field.</summary>
-  public const int NpcListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::NCharacter> _repeated_npcList_codec
+  /// <summary>Field number for the "MonsterList" field.</summary>
+  public const int MonsterListFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::NCharacter> _repeated_monsterList_codec
       = pb::FieldCodec.ForMessage(10, global::NCharacter.Parser);
-  private readonly pbc::RepeatedField<global::NCharacter> npcList_ = new pbc::RepeatedField<global::NCharacter>();
+  private readonly pbc::RepeatedField<global::NCharacter> monsterList_ = new pbc::RepeatedField<global::NCharacter>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::NCharacter> NpcList {
-    get { return npcList_; }
+  public pbc::RepeatedField<global::NCharacter> MonsterList {
+    get { return monsterList_; }
   }
 
   /// <summary>Field number for the "entity" field.</summary>
@@ -7182,7 +7135,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if(!npcList_.Equals(other.npcList_)) return false;
+    if(!monsterList_.Equals(other.monsterList_)) return false;
     if (!object.Equals(Entity, other.Entity)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -7191,7 +7144,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    hash ^= npcList_.GetHashCode();
+    hash ^= monsterList_.GetHashCode();
     if (entity_ != null) hash ^= Entity.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -7211,7 +7164,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    npcList_.WriteTo(output, _repeated_npcList_codec);
+    monsterList_.WriteTo(output, _repeated_monsterList_codec);
     if (entity_ != null) {
       output.WriteRawTag(18);
       output.WriteMessage(Entity);
@@ -7226,7 +7179,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    npcList_.WriteTo(ref output, _repeated_npcList_codec);
+    monsterList_.WriteTo(ref output, _repeated_monsterList_codec);
     if (entity_ != null) {
       output.WriteRawTag(18);
       output.WriteMessage(Entity);
@@ -7241,7 +7194,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    size += npcList_.CalculateSize(_repeated_npcList_codec);
+    size += monsterList_.CalculateSize(_repeated_monsterList_codec);
     if (entity_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
     }
@@ -7257,7 +7210,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
     if (other == null) {
       return;
     }
-    npcList_.Add(other.npcList_);
+    monsterList_.Add(other.monsterList_);
     if (other.entity_ != null) {
       if (entity_ == null) {
         Entity = new global::NEntity();
@@ -7280,7 +7233,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          npcList_.AddEntriesFrom(input, _repeated_npcList_codec);
+          monsterList_.AddEntriesFrom(input, _repeated_monsterList_codec);
           break;
         }
         case 18: {
@@ -7306,7 +7259,7 @@ public sealed partial class MonsterCharacterResponse : pb::IMessage<MonsterChara
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          npcList_.AddEntriesFrom(ref input, _repeated_npcList_codec);
+          monsterList_.AddEntriesFrom(ref input, _repeated_monsterList_codec);
           break;
         }
         case 18: {

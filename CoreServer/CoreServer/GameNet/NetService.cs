@@ -24,6 +24,12 @@ namespace CoreServer.GameNet
         //TcpSocketListener listener;
         private TcpService tcpService;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        /// <param name="block"></param>
         public NetService(string ip, int port, int block = 100)
         {
             tcpService = new TcpService(ip, port, block);

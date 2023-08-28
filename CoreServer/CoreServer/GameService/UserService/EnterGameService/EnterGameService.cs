@@ -49,7 +49,6 @@ namespace CoreServer.GameService
             netConnection.Set<CharacterData>(chara);
             GameEnterResponse response = new GameEnterResponse();
             response.Success = true;
-            response.Entity = chara.EntityData;
             response.Character = chara.characterInfo;
             netConnection.SendDataToClient(response);
         }

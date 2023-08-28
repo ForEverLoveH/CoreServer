@@ -12,7 +12,7 @@ namespace CoreServer.GameService
         public void StartService()
         {
             PlayerEntityService.Instance.StartService();
-            MonsterEntityService.Instance.StartService();
+            // MonsterEntityService.Instance.StartService();
         }
     }
 }

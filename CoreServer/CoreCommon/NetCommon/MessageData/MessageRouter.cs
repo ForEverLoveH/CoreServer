@@ -121,7 +121,7 @@ namespace CoreCommon.MessageData
         { get { return _isRunning; } }
 
         /// <summary>
-        ///
+        ///线程池
         /// </summary>
         /// <param name="threadCount"></param>
         public void Start(int threadCount)
@@ -140,8 +140,10 @@ namespace CoreCommon.MessageData
             }
         }
 
+        // a =>C  b=>D   C D
+
         /// <summary>
-        /// 线程工作
+        /// 线程工作 线程死锁
         /// </summary>
         /// <param name="state"></param>
         private void MessageWork(object? state)
